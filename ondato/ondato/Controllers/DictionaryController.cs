@@ -41,16 +41,16 @@ namespace ondato.Controllers
 
         // POST api/values  
         [HttpPost]
-        public void Create([FromBody] KeyValueDto yourDto)
+        public void Create([FromBody] CreateViewModel createViewModel)
         {
-            dictionaryService.AddData(yourDto.Key, yourDto.Data, yourDto.Valid);
+            dictionaryService.AddData(createViewModel.Key, createViewModel.Data, createViewModel.Valid);
         }
 
         // PUT api/values/5  
         [HttpPut]
-        public void Append(KeyValueDto yourDto)
+        public void Append(AppendViewModel appendViewModel)
         {
-            dictionaryService.UpdateData(yourDto.Key, yourDto.Data);
+            dictionaryService.UpdateData(appendViewModel.Key, appendViewModel.Data);
         }
 
         // DELETE api/values/key 
